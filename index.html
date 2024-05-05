@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="calendar">
+            <div id="left-part">
+                <p class="date">1</p>
+                <p class="day">Sunday</p>
+            </div>
+            <div id="right-part">
+                <p class="month">February</p>
+                <p class="year">2021</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const date = document.querySelector(".date");
+        const day = document.querySelector(".day");
+        const month = document.querySelector(".month");
+        const year = document.querySelector(".year");
+
+        var current_today = new Date();
+
+        const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        date.innerHTML = (current_today.getDate()<10?"0":"")+current_today.getDate();
+        day.innerHTML = weekdays[current_today.getDay()];
+        month.innerHTML = months[current_today.getMonth()];
+        year.innerHTML = current_today.getFullYear();
+
+    </script>
+</body>
+
+</html>
